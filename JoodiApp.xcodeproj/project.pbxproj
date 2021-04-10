@@ -13,6 +13,11 @@
 		E288583126220DD100BD756F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E288583026220DD100BD756F /* Preview Assets.xcassets */; };
 		E288583C26220DD100BD756F /* JoodiAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288583B26220DD100BD756F /* JoodiAppTests.swift */; };
 		E288584726220DD100BD756F /* JoodiAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288584626220DD100BD756F /* JoodiAppUITests.swift */; };
+		E288585B26220F7400BD756F /* Shopper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288585A26220F7400BD756F /* Shopper.swift */; };
+		E28858682622106900BD756F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28858672622106900BD756F /* Item.swift */; };
+		E288586D262210DE00BD756F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288586C262210DE00BD756F /* Order.swift */; };
+		E28858722622143200BD756F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28858712622143200BD756F /* Location.swift */; };
+		E28858A626221E1B00BD756F /* ApiURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28858A526221E1B00BD756F /* ApiURLs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,11 @@
 		E288584226220DD100BD756F /* JoodiAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoodiAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E288584626220DD100BD756F /* JoodiAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoodiAppUITests.swift; sourceTree = "<group>"; };
 		E288584826220DD100BD756F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E288585A26220F7400BD756F /* Shopper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopper.swift; sourceTree = "<group>"; };
+		E28858672622106900BD756F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		E288586C262210DE00BD756F /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		E28858712622143200BD756F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		E28858A526221E1B00BD756F /* ApiURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiURLs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +105,12 @@
 		E288582826220DD000BD756F /* JoodiApp */ = {
 			isa = PBXGroup;
 			children = (
+				E28858A526221E1B00BD756F /* ApiURLs.swift */,
 				E288582926220DD000BD756F /* JoodiAppApp.swift */,
+				E288585726220F3E00BD756F /* Views */,
 				E288582B26220DD000BD756F /* ContentView.swift */,
+				E288585926220F4800BD756F /* ViewModels */,
+				E288585826220F4200BD756F /* Models */,
 				E288582D26220DD100BD756F /* Assets.xcassets */,
 				E288583226220DD100BD756F /* Info.plist */,
 				E288582F26220DD100BD756F /* Preview Content */,
@@ -128,6 +142,31 @@
 				E288584826220DD100BD756F /* Info.plist */,
 			);
 			path = JoodiAppUITests;
+			sourceTree = "<group>";
+		};
+		E288585726220F3E00BD756F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E288585826220F4200BD756F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E288585A26220F7400BD756F /* Shopper.swift */,
+				E28858672622106900BD756F /* Item.swift */,
+				E288586C262210DE00BD756F /* Order.swift */,
+				E28858712622143200BD756F /* Location.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E288585926220F4800BD756F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E28858682622106900BD756F /* Item.swift in Sources */,
 				E288582C26220DD000BD756F /* ContentView.swift in Sources */,
+				E28858A626221E1B00BD756F /* ApiURLs.swift in Sources */,
+				E288586D262210DE00BD756F /* Order.swift in Sources */,
 				E288582A26220DD000BD756F /* JoodiAppApp.swift in Sources */,
+				E28858722622143200BD756F /* Location.swift in Sources */,
+				E288585B26220F7400BD756F /* Shopper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
