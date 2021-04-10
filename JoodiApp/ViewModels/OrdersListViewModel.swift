@@ -51,13 +51,15 @@ class OrdersListViewModel: ObservableObject {
 				self.fetchingStatus	=	.failedToDecodeData
 				return
 			}
-			
-			self.fetchingStatus	=	.success
-			print("Orders loaded")
 			DispatchQueue.main.async {
 				self.orders	=	decodedOrders
-			}			
+				print(decodedOrders.count)
+				print(self.orders.count)
+			}
+			
+			self.fetchingStatus	=	.success
 		}.resume()
+		
 		self.fetchingStatus	=	.standby
 	}
 }

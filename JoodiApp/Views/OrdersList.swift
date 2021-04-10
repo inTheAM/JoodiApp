@@ -1,0 +1,60 @@
+//
+//  OrdersView.swift
+//  JoodiApp
+//
+//  Created by Ahmed Mgua on 4/10/21.
+//
+
+import SwiftUI
+
+struct OrdersList: View {
+	@EnvironmentObject	var user:	User
+	@StateObject	var ordersVM	=	OrdersListViewModel()
+	
+    var body: some View {
+		
+		VStack(alignment:	.leading) {
+			NavigationLink(destination:	PlaceOrder().environmentObject(user))	{
+				HStack {
+					Image(systemName: "plus.app")
+						.resizable()
+						.foregroundColor(.white)
+						.opacity(0.5)
+						.background(Color.orange.opacity(0.6).cornerRadius(10))
+						.frame(width: 50, height: 50)
+					Text("New order")
+						.font(.title)
+						.bold()
+					Spacer()
+				}
+			}.onAppear	{
+				ordersVM.fetch()
+			}
+			
+			Text("Previous orders")
+				.font(.largeTitle)
+				.bold()
+				.navigationTitle(user.name)
+				.navigationBarBackButtonHidden(true)
+			
+			ScrollView	{
+				ForEach(ordersVM.orders)	{	order in
+					NavigationLink(destination:	OrderDetails(order:	order.id))	{
+						
+						VStack(alignment:	.leading) {
+							Text("\(order.items.count) items")
+							
+							Text("Delivered on \(order.timeToDeliver) by \(order.shopper)")
+						}
+					}
+				}
+			}
+		}.padding()
+    }
+}
+
+struct OrdersView_Previews: PreviewProvider {
+    static var previews: some View {
+		OrdersList().environmentObject(User.example)
+    }
+}

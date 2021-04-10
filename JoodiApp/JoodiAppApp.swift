@@ -11,7 +11,7 @@ import SwiftUI
 struct JoodiAppApp: App {
     var body: some Scene {
         WindowGroup {
-            OrdersList()
+            SplashScreen()
         }
     }
 }
