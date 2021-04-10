@@ -7,15 +7,21 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ShoppersList: View {
+	@StateObject	var shoppersVM	=	ShoppersViewModel()
+	
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+		List(shoppersVM.shoppers)	{	shopper in
+			Text(shopper.name)
+		}
+		.onAppear	{
+			shoppersVM.fetch()
+		}
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ShoppersList()
     }
 }

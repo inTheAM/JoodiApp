@@ -7,6 +7,11 @@
 
 import Foundation
 
-struct Item:	Codable	{
+struct Item:	Identifiable,	Codable	{
 	var name:	String
+	var count:	Int
+	
+	var id:	String	{
+		name
+	}
 }

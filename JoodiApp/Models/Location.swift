@@ -15,4 +15,6 @@ struct Location:	Codable	{
 		var latitude:	Double
 		var longitude:	Double
 	}
+	
+	static let	blank	=	Location(type: 9999, value: Coordinate(latitude: 0, longitude: 0))
 }

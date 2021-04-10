@@ -1,0 +1,87 @@
+//
+//  OrderDetailsViewModel.swift
+//  JoodiApp
+//
+//  Created by Ahmed Mgua on 4/10/21.
+//
+
+import Foundation
+import Combine
+
+class OrderDetailsViewModel: ObservableObject {
+//	MARK:-	MODEL ACCESS
+	private var didChange	=	PassthroughSubject<Order,	FetchingStatus>()
+	
+	@Published	private(set)	var order:	Order	{
+		didSet	{
+			didChange.send(order)
+		}
+	}
+	
+//	MARK:-	FETCHING STATUS
+	private(set)	var fetchingStatus:	FetchingStatus	{
+		didSet	{
+			print(fetchingStatus.localizedDescription)
+			switch fetchingStatus {
+				case	.success	:
+					didChange.send(completion: .finished)
+				default	:	didChange.send(completion: .failure(fetchingStatus))
+					
+			}
+		}
+	}
+	
+//	MARK:-	INITIALIZER
+	init()	{
+		order	=	.blank
+		fetchingStatus	=	.standby
+	}
+	
+//	MARK:-	ORDER PROPERTIES
+	var name:	String	{
+		order.name
+	}
+	var phoneNumber:	String	{
+		order.phoneNumber
+	}
+	var timeToDeliver:	String	{
+		order.timeToDeliver
+	}
+	var shopper:	String	{
+		order.shopper
+	}
+	var	location:	Location	{
+		order.location
+	}
+	var items:	[Item]	{
+		order.items
+	}
+	
+//	MARK:-	FETCH DATA
+	func	fetch(_	id:	Int)	{
+		guard	let url	=	URL(string: ApiURLs.orderDetailsURL(id: id))	else	{
+			self.fetchingStatus	=	.invalidURL
+			return
+		}
+		
+		self.fetchingStatus	=	.loading
+		
+		URLSession.shared.dataTask(with: URLRequest(url: url))	{	data,	response,	error	in
+			guard let data	=	data	else	{
+				self.fetchingStatus	=	.noDataFromServer
+				return
+			}
+			guard let decodedOrder	=	try?	JSONDecoder().decode(Order.self, from: data)	else	{
+				self.fetchingStatus	=	.failedToDecodeData
+				return
+			}
+			
+			self.fetchingStatus	=	.success
+			print("Order details loaded")
+			DispatchQueue.main.async {
+				self.order	=	decodedOrder
+			}
+		}.resume()
+		self.fetchingStatus	=	.standby
+	}
+}

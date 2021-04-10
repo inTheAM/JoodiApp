@@ -10,9 +10,11 @@ import Foundation
 struct Order:	Identifiable,	Codable	{
 	var id:	Int
 	var name:	String
-	var phoneNumber:	Int
-	var timeToDeliver:	Date
+	var phoneNumber:	String
+	var timeToDeliver:	String
 	var shopper:	String
 	var location:	Location
 	var items:	[Item]
+	
+	static let blank	=	Order(id: 0, name: "", phoneNumber: "", timeToDeliver: "", shopper: "", location: .blank, items: [Item]())
 }
