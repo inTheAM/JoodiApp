@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Shopper:	Identifiable,	Codable {
+struct Shopper:	Identifiable,	Codable,	Hashable {
 	var name:	String
 	var id:	Int
 }

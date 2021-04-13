@@ -10,6 +10,7 @@ import SwiftUI
 struct WelcomeView: View {
 	@StateObject var welcomeVM	=	WelcomeViewModel()
 	@State private var showNext	=	false
+	@State private var skip	=	false
 	
     var body: some View {
 		
@@ -23,13 +24,19 @@ struct WelcomeView: View {
 			
 			Button("Proceed")	{
 				showNext	=	true
-			}
+			}.padding()
 			.disabled(welcomeVM.disableProceed)
 			
+			Button("Skip")	{
+				skip	=	true
+			}.padding()
+			
 			NavigationLink("",	destination:	OrdersList().environmentObject(welcomeVM.newUser()),	isActive:	$showNext)
+			NavigationLink("",	destination:	OrdersList().environmentObject(welcomeVM.skip()),	isActive:	$skip)
 			
 		}.navigationBarBackButtonHidden(true)
     }
+	
 	
 	
 }

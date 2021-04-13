@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct Order:	Identifiable,	Codable	{
+struct Order:	Identifiable,	Codable,	Hashable	{
+	static func == (lhs: Order, rhs: Order) -> Bool {
+		lhs.id	==	rhs.id
+	}
+	
 	var id:	Int
 	var name:	String
 	var phoneNumber:	String

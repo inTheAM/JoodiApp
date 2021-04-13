@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 class OrdersListViewModel: ObservableObject {
+//	MARK:-	MODEL
 	private var didChange	=	PassthroughSubject<[Order],	FetchingStatus>()
 	
 	@Published	private(set)	var orders:	[Order]	{
@@ -17,6 +18,7 @@ class OrdersListViewModel: ObservableObject {
 		}
 	}
 	
+//	MARK:-	FETCHING STATUS
 	private(set)	var fetchingStatus:	FetchingStatus	{
 		didSet	{
 			print(fetchingStatus.localizedDescription)
@@ -29,11 +31,13 @@ class OrdersListViewModel: ObservableObject {
 		}
 	}
 	
+//	MARK:-	INITIALIZER
 	init()	{
 		orders	=	[Order]()
 		fetchingStatus	=	.standby
 	}
 	
+//	MARK:-	FETCH ORDERS
 	func	fetch()	{
 		guard	let url	=	URL(string: ApiURLs.ordersURL)	else	{
 			self.fetchingStatus	=	.invalidURL
@@ -53,8 +57,6 @@ class OrdersListViewModel: ObservableObject {
 			}
 			DispatchQueue.main.async {
 				self.orders	=	decodedOrders
-				print(decodedOrders.count)
-				print(self.orders.count)
 			}
 			
 			self.fetchingStatus	=	.success

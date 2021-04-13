@@ -21,7 +21,6 @@ class OrderDetailsViewModel: ObservableObject {
 //	MARK:-	FETCHING STATUS
 	private(set)	var fetchingStatus:	FetchingStatus	{
 		didSet	{
-			print(fetchingStatus.localizedDescription)
 			switch fetchingStatus {
 				case	.success	:
 					didChange.send(completion: .finished)
@@ -37,7 +36,15 @@ class OrderDetailsViewModel: ObservableObject {
 		fetchingStatus	=	.standby
 	}
 	
+	init(order:	Order)	{
+		self.order	=	order
+		fetchingStatus	=	.success
+	}
+	
 //	MARK:-	ORDER PROPERTIES
+	var id:	Int	{
+		order.id
+	}
 	var name:	String	{
 		order.name
 	}
@@ -45,7 +52,12 @@ class OrderDetailsViewModel: ObservableObject {
 		order.phoneNumber
 	}
 	var timeToDeliver:	String	{
-		order.timeToDeliver
+		let formatter	=	DateFormatter()
+		formatter.dateFormat	=	"yyyy-MM-dd HH:mm a"
+		guard let date	=	formatter.date(from: order.timeToDeliver) else { return order.timeToDeliver }
+		formatter.dateStyle	=	.short
+		
+		return formatter.string(from: date)
 	}
 	var shopper:	String	{
 		order.shopper
@@ -57,7 +69,15 @@ class OrderDetailsViewModel: ObservableObject {
 		order.items
 	}
 	
-//	MARK:-	FETCH DATA
+	var isComplete:	Bool	{
+		let formatter	=	DateFormatter()
+		formatter.dateFormat	=	"yyyy-MM-dd HH:mm a"
+		guard let date	=	formatter.date(from: order.timeToDeliver) else { return false }
+		
+		return Date()	>	date
+	}
+	
+//	MARK:-	FETCH ORDER DETAILS
 	func	fetch(_	id:	Int)	{
 		guard	let url	=	URL(string: ApiURLs.orderDetailsURL(id: id))	else	{
 			self.fetchingStatus	=	.invalidURL
@@ -65,7 +85,7 @@ class OrderDetailsViewModel: ObservableObject {
 		}
 		
 		self.fetchingStatus	=	.loading
-		
+		print("Fetching order number: \(id) from \(ApiURLs.orderDetailsURL(id: id))")
 		URLSession.shared.dataTask(with: URLRequest(url: url))	{	data,	response,	error	in
 			guard let data	=	data	else	{
 				self.fetchingStatus	=	.noDataFromServer

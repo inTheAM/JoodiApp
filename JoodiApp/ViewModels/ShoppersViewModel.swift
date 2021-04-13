@@ -27,7 +27,6 @@ class ShoppersViewModel: ObservableObject {
 				case	.success	:
 					didChange.send(completion: .finished)
 				default	:	didChange.send(completion: .failure(fetchingStatus))
-					
 			}
 		}
 	}
@@ -38,7 +37,7 @@ class ShoppersViewModel: ObservableObject {
 		fetchingStatus	=	.standby
 	}
 	
-//	MARK:-	FETCH DATA
+//	MARK:-	FETCH SHOPPERS
 	func	fetch()	{
 		guard	let url	=	URL(string: ApiURLs.shoppersURL)	else	{
 			self.fetchingStatus	=	.invalidURL

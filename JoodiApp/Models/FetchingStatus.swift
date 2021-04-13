@@ -14,7 +14,7 @@ enum FetchingStatus:	Error	{
 extension	FetchingStatus:	LocalizedError	{
 	var localizedDescription:	String	{
 		switch self	{
-			case	.standby	:	return ""
+			case	.standby	:	return "Standby"
 			case	.loading	:	return "Loading data"
 			case	.invalidURL	:	return	"Invalid URL"
 			case	.noDataFromServer	:	return	"No data received from server"

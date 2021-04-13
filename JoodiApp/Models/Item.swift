@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Item:	Identifiable,	Codable	{
+struct Item:	Identifiable,	Codable,	Hashable	{
 	var name:	String
 	var count:	Int
 	

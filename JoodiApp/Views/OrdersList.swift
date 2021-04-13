@@ -26,7 +26,7 @@ struct OrdersList: View {
 						.font(.title)
 						.bold()
 					Spacer()
-				}
+				}.padding()
 			}.onAppear	{
 				ordersVM.fetch()
 			}
@@ -35,21 +35,21 @@ struct OrdersList: View {
 				.font(.largeTitle)
 				.bold()
 				.navigationTitle(user.name)
+				.navigationBarTitleDisplayMode(.inline)
 				.navigationBarBackButtonHidden(true)
+				.padding(.horizontal)
 			
 			ScrollView	{
 				ForEach(ordersVM.orders)	{	order in
 					NavigationLink(destination:	OrderDetails(order:	order.id))	{
-						
-						VStack(alignment:	.leading) {
-							Text("\(order.items.count) items")
+						OrderSummary(order:	order)
 							
-							Text("Delivered on \(order.timeToDeliver) by \(order.shopper)")
-						}
+					}.onAppear	{
+						print("Showing summary for order: \(order.id)")
 					}
-				}
+				}.padding()
 			}
-		}.padding()
+		}
     }
 }
 

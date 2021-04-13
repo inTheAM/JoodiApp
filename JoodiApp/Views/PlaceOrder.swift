@@ -33,7 +33,7 @@ struct PlaceOrder: View {
 						.font(.title)
 						.bold()
 				}
-				.frame(width:	130)
+				.frame(width:	150)
 			}
 			Button("Add item")	{
 				placeOrderViewModel.addNewItem()
@@ -44,8 +44,8 @@ struct PlaceOrder: View {
 			
 			
 			Button("Place order")	{
-				placeOrderViewModel.placeOrder()
-			}.disabled(!placeOrderViewModel.dataValid)
+				placeOrderViewModel.placeOrder(for:	user)
+			}.disabled(!placeOrderViewModel.inputsValid)
 			.padding()
 		}
     }

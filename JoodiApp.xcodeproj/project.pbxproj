@@ -26,6 +26,15 @@
 		E28858CD26222C6100BD756F /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28858CC26222C6100BD756F /* OrderDetails.swift */; };
 		E28858D22622322E00BD756F /* PlaceOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28858D12622322E00BD756F /* PlaceOrderViewModel.swift */; };
 		E28858DD2622368800BD756F /* PlaceOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28858DC2622368800BD756F /* PlaceOrder.swift */; };
+		E288EDD3262251D000C3B5C0 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288EDD2262251D000C3B5C0 /* WelcomeView.swift */; };
+		E288EDD82622520900C3B5C0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288EDD72622520900C3B5C0 /* User.swift */; };
+		E288EDE02622531900C3B5C0 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288EDDF2622531900C3B5C0 /* SplashScreen.swift */; };
+		E288EDED2622554900C3B5C0 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288EDEC2622554900C3B5C0 /* WelcomeViewModel.swift */; };
+		E288EE1D262284D100C3B5C0 /* OrderSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288EE1C262284D100C3B5C0 /* OrderSummary.swift */; };
+		E2976C7326259A2300764386 /* SubmitStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976C7226259A2300764386 /* SubmitStatus.swift */; };
+		E2976C7826259ED400764386 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976C7726259ED400764386 /* Review.swift */; };
+		E2976C7D2625A09200764386 /* SubmitReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976C7C2625A09200764386 /* SubmitReviewViewModel.swift */; };
+		E2976C822625A25100764386 /* SubmitReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976C812625A25100764386 /* SubmitReview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +80,15 @@
 		E28858CC26222C6100BD756F /* OrderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
 		E28858D12622322E00BD756F /* PlaceOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOrderViewModel.swift; sourceTree = "<group>"; };
 		E28858DC2622368800BD756F /* PlaceOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOrder.swift; sourceTree = "<group>"; };
+		E288EDD2262251D000C3B5C0 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		E288EDD72622520900C3B5C0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E288EDDF2622531900C3B5C0 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		E288EDEC2622554900C3B5C0 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		E288EE1C262284D100C3B5C0 /* OrderSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSummary.swift; sourceTree = "<group>"; };
+		E2976C7226259A2300764386 /* SubmitStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitStatus.swift; sourceTree = "<group>"; };
+		E2976C7726259ED400764386 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		E2976C7C2625A09200764386 /* SubmitReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitReviewViewModel.swift; sourceTree = "<group>"; };
+		E2976C812625A25100764386 /* SubmitReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitReview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,10 +142,6 @@
 				E28858A526221E1B00BD756F /* ApiURLs.swift */,
 				E288582926220DD000BD756F /* JoodiAppApp.swift */,
 				E288585726220F3E00BD756F /* Views */,
-				E288582B26220DD000BD756F /* ShoppersList.swift */,
-				E28858BF262226D100BD756F /* OrdersList.swift */,
-				E28858CC26222C6100BD756F /* OrderDetails.swift */,
-				E28858DC2622368800BD756F /* PlaceOrder.swift */,
 				E288585926220F4800BD756F /* ViewModels */,
 				E288585826220F4200BD756F /* Models */,
 				E288582D26220DD100BD756F /* Assets.xcassets */,
@@ -166,6 +180,14 @@
 		E288585726220F3E00BD756F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E288EDDF2622531900C3B5C0 /* SplashScreen.swift */,
+				E288EDD2262251D000C3B5C0 /* WelcomeView.swift */,
+				E28858BF262226D100BD756F /* OrdersList.swift */,
+				E288EE1C262284D100C3B5C0 /* OrderSummary.swift */,
+				E28858CC26222C6100BD756F /* OrderDetails.swift */,
+				E288582B26220DD000BD756F /* ShoppersList.swift */,
+				E28858DC2622368800BD756F /* PlaceOrder.swift */,
+				E2976C812625A25100764386 /* SubmitReview.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,7 +199,9 @@
 				E28858672622106900BD756F /* Item.swift */,
 				E288586C262210DE00BD756F /* Order.swift */,
 				E28858712622143200BD756F /* Location.swift */,
+				E2976C7726259ED400764386 /* Review.swift */,
 				E28858B226221E7700BD756F /* FetchingStatus.swift */,
+				E2976C7226259A2300764386 /* SubmitStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,10 +209,13 @@
 		E288585926220F4800BD756F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				E288EDEC2622554900C3B5C0 /* WelcomeViewModel.swift */,
 				E28858AD26221E6A00BD756F /* ShoppersViewModel.swift */,
 				E28858B7262223F900BD756F /* OrdersListViewModel.swift */,
 				E28858C4262229E300BD756F /* OrderDetailsViewModel.swift */,
 				E28858D12622322E00BD756F /* PlaceOrderViewModel.swift */,
+				E2976C7C2625A09200764386 /* SubmitReviewViewModel.swift */,
+				E288EDD72622520900C3B5C0 /* User.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -322,17 +349,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E288EDE02622531900C3B5C0 /* SplashScreen.swift in Sources */,
+				E288EDED2622554900C3B5C0 /* WelcomeViewModel.swift in Sources */,
 				E28858C0262226D100BD756F /* OrdersList.swift in Sources */,
 				E28858682622106900BD756F /* Item.swift in Sources */,
 				E28858B326221E7700BD756F /* FetchingStatus.swift in Sources */,
+				E288EDD3262251D000C3B5C0 /* WelcomeView.swift in Sources */,
+				E288EE1D262284D100C3B5C0 /* OrderSummary.swift in Sources */,
 				E288582C26220DD000BD756F /* ShoppersList.swift in Sources */,
+				E2976C7326259A2300764386 /* SubmitStatus.swift in Sources */,
 				E28858DD2622368800BD756F /* PlaceOrder.swift in Sources */,
+				E2976C7D2625A09200764386 /* SubmitReviewViewModel.swift in Sources */,
 				E28858AE26221E6A00BD756F /* ShoppersViewModel.swift in Sources */,
+				E288EDD82622520900C3B5C0 /* User.swift in Sources */,
 				E28858A626221E1B00BD756F /* ApiURLs.swift in Sources */,
 				E28858D22622322E00BD756F /* PlaceOrderViewModel.swift in Sources */,
 				E288586D262210DE00BD756F /* Order.swift in Sources */,
 				E288582A26220DD000BD756F /* JoodiAppApp.swift in Sources */,
 				E28858CD26222C6100BD756F /* OrderDetails.swift in Sources */,
+				E2976C7826259ED400764386 /* Review.swift in Sources */,
+				E2976C822625A25100764386 /* SubmitReview.swift in Sources */,
 				E28858C5262229E300BD756F /* OrderDetailsViewModel.swift in Sources */,
 				E28858722622143200BD756F /* Location.swift in Sources */,
 				E288585B26220F7400BD756F /* Shopper.swift in Sources */,

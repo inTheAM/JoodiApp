@@ -7,14 +7,18 @@
 
 import Foundation
 
-struct Location:	Codable	{
+struct Location:	Codable,	Hashable	{
+	static func == (lhs: Location, rhs: Location) -> Bool {
+		lhs.value	==	rhs.value
+	}
+	
 	var type:	Int
 	var value:	Coordinate
 	
-	struct Coordinate:	Codable {
+	struct Coordinate:	Codable,	Hashable {
 		var latitude:	Double
 		var longitude:	Double
 	}
 	
-	static let	blank	=	Location(type: 9999, value: Coordinate(latitude: 0, longitude: 0))
+	static let	blank	=	Location(type: 9999, value: Coordinate(latitude: 0, longitude: 30))
 }

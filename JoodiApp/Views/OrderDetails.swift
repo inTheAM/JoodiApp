@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OrderDetails: View {
-	@StateObject	var orderDetailsVM	=	OrderDetailsViewModel()
+	@ObservedObject	var orderDetailsVM	=	OrderDetailsViewModel()
 	var orderID:	Int
 	
 	init(order:	Int)	{
@@ -17,8 +17,15 @@ struct OrderDetails: View {
 	
     var body: some View {
 		VStack	{
+			Text("Order number \(orderDetailsVM.id)")
 			Text(orderDetailsVM.name)
+			
+			
+			NavigationLink(destination: SubmitReview(order: orderDetailsVM.order))	{
+				Text("Review this order")
+			}
 		}.onAppear	{
+			print("Showing details for order \(orderID)")
 			orderDetailsVM.fetch(orderID)
 		}
     }
