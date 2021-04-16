@@ -21,7 +21,7 @@ class ShoppersViewModelTests:	XCTestCase	{
 		sut	=	nil
 	}
 	
-	func testShoppersListFetched()	{
+	func testShoppersListFetched()	throws	{
 		let exp	=	expectation(description: "Fetching shoppers list")
 		sut.fetch	{
 			exp.fulfill()
