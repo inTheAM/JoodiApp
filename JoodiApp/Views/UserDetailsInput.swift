@@ -28,6 +28,7 @@ struct UserDetailsInput: View {
 					.background(RoundedRectangle(cornerRadius: 10).opacity(0.1))
 			}.padding()
 			.cardify()
+			Spacer()
 		}
 		.padding()
     }

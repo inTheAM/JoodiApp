@@ -20,10 +20,14 @@ struct ItemsInput:	View	{
 			
 			Divider()
 			VStack	{
-				ForEach(placeOrderViewModel.items)	{	item in
-					HStack {
-						Text("\(item.count)x")
-						Text(item.name)
+				if placeOrderViewModel.items.isEmpty	{
+					Text("Add items below")
+				}	else	{
+					ForEach(placeOrderViewModel.items)	{	item in
+						HStack {
+							Text("\(item.count)x")
+							Text(item.name)
+						}
 					}
 				}
 			}.padding()
