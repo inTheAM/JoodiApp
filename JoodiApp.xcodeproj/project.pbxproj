@@ -15,6 +15,11 @@
 		E28704FE2629E39300264C39 /* JoodiButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28704FD2629E39300264C39 /* JoodiButtonStyle.swift */; };
 		E28705062629E3C200264C39 /* MapKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28705052629E3C200264C39 /* MapKitExtensions.swift */; };
 		E28705132629F7E200264C39 /* CustomizeOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28705122629F7E200264C39 /* CustomizeOrder.swift */; };
+		E2870519262A114B00264C39 /* PlaceOrderViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2870518262A114B00264C39 /* PlaceOrderViewModelTests.swift */; };
+		E2870521262A210700264C39 /* ShoppersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2870520262A210700264C39 /* ShoppersViewModelTests.swift */; };
+		E2870526262A226A00264C39 /* OrdersListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2870525262A226A00264C39 /* OrdersListViewModelTests.swift */; };
+		E287052B262A23FC00264C39 /* OrderDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E287052A262A23FC00264C39 /* OrderDetailsViewModelTests.swift */; };
+		E2870530262A264700264C39 /* SubmitReviewViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E287052F262A264700264C39 /* SubmitReviewViewModelTests.swift */; };
 		E288582A26220DD000BD756F /* JoodiAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288582926220DD000BD756F /* JoodiAppApp.swift */; };
 		E288582C26220DD000BD756F /* ShoppersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288582B26220DD000BD756F /* ShoppersList.swift */; };
 		E288582E26220DD100BD756F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E288582D26220DD100BD756F /* Assets.xcassets */; };
@@ -68,6 +73,11 @@
 		E28704FD2629E39300264C39 /* JoodiButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoodiButtonStyle.swift; sourceTree = "<group>"; };
 		E28705052629E3C200264C39 /* MapKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitExtensions.swift; sourceTree = "<group>"; };
 		E28705122629F7E200264C39 /* CustomizeOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeOrder.swift; sourceTree = "<group>"; };
+		E2870518262A114B00264C39 /* PlaceOrderViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOrderViewModelTests.swift; sourceTree = "<group>"; };
+		E2870520262A210700264C39 /* ShoppersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppersViewModelTests.swift; sourceTree = "<group>"; };
+		E2870525262A226A00264C39 /* OrdersListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListViewModelTests.swift; sourceTree = "<group>"; };
+		E287052A262A23FC00264C39 /* OrderDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		E287052F262A264700264C39 /* SubmitReviewViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitReviewViewModelTests.swift; sourceTree = "<group>"; };
 		E288582626220DD000BD756F /* JoodiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoodiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E288582926220DD000BD756F /* JoodiAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoodiAppApp.swift; sourceTree = "<group>"; };
 		E288582B26220DD000BD756F /* ShoppersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppersList.swift; sourceTree = "<group>"; };
@@ -191,6 +201,11 @@
 			isa = PBXGroup;
 			children = (
 				E288583B26220DD100BD756F /* JoodiAppTests.swift */,
+				E2870520262A210700264C39 /* ShoppersViewModelTests.swift */,
+				E2870525262A226A00264C39 /* OrdersListViewModelTests.swift */,
+				E287052A262A23FC00264C39 /* OrderDetailsViewModelTests.swift */,
+				E2870518262A114B00264C39 /* PlaceOrderViewModelTests.swift */,
+				E287052F262A264700264C39 /* SubmitReviewViewModelTests.swift */,
 				E288583D26220DD100BD756F /* Info.plist */,
 			);
 			path = JoodiAppTests;
@@ -416,7 +431,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2870530262A264700264C39 /* SubmitReviewViewModelTests.swift in Sources */,
 				E288583C26220DD100BD756F /* JoodiAppTests.swift in Sources */,
+				E2870521262A210700264C39 /* ShoppersViewModelTests.swift in Sources */,
+				E2870519262A114B00264C39 /* PlaceOrderViewModelTests.swift in Sources */,
+				E2870526262A226A00264C39 /* OrdersListViewModelTests.swift in Sources */,
+				E287052B262A23FC00264C39 /* OrderDetailsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 import Foundation
 
 enum SubmitStatus:	Error	{
-	case	standby, sending,	invalidURL,	noResponseFromServer,	failedToEncodeData,	success
+	case	standby, sending,	invalidInputs,	invalidURL,	noResponseFromServer,	failedToEncodeData,	success
 }
 
 extension	SubmitStatus:	LocalizedError	{
@@ -16,6 +16,7 @@ extension	SubmitStatus:	LocalizedError	{
 		switch self	{
 			case	.standby	:	return ""
 			case	.sending	:	return "Loading data"
+			case	.invalidInputs	:	return	"Invalid input data"
 			case	.invalidURL	:	return	"Invalid URL"
 			case	.noResponseFromServer	:	return	"No response received from server"
 			case	.failedToEncodeData	:	return	"Failed to encode data"

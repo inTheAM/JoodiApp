@@ -67,8 +67,7 @@ struct PlaceOrder: View {
 	}
 	
 	private func placeOrder()	{
-		placeOrderViewModel.placeOrder()
-		if placeOrderViewModel.submitStatus	==	.success	{
+		placeOrderViewModel.placeOrder	{
 			presentationMode.wrappedValue.dismiss()
 		}
 	}

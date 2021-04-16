@@ -48,7 +48,7 @@ class SubmitReviewViewModel:	ObservableObject	{
 	}
 	
 //	MARK:-	SUBMIT REVIEW
-	func submitReview()	{
+	func submitReview(completion:	@escaping	()->()	=	{})	{
 		guard let url	=	URL(string: ApiURLs.reviewsURL)	else	{
 			submitStatus	=	.invalidURL
 			return
@@ -71,6 +71,7 @@ class SubmitReviewViewModel:	ObservableObject	{
 				return
 			}
 			self.submitStatus	=	.success
+			completion()
 		}.resume()
 	}
 }

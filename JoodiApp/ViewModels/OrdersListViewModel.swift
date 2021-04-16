@@ -39,7 +39,7 @@ class OrdersListViewModel: ObservableObject {
 	}
 	
 //	MARK:-	FETCH ORDERS
-	func	fetch()	{
+	func	fetch(completion:	@escaping	()->()	=	{})	{
 		guard	let url	=	URL(string: ApiURLs.ordersURL)	else	{
 			self.fetchingStatus	=	.invalidURL
 			return
@@ -58,15 +58,9 @@ class OrdersListViewModel: ObservableObject {
 			}
 			DispatchQueue.main.async {
 				self.orders	=	decodedOrders
+				self.fetchingStatus	=	.success
 			}
-			
-			self.fetchingStatus	=	.success
+			completion()
 		}.resume()
-		
-		self.fetchingStatus	=	.standby
-	}
-	
-	deinit {
-		print("Order list destroyed")
 	}
 }

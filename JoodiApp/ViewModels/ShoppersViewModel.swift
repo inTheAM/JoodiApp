@@ -39,7 +39,7 @@ class ShoppersViewModel: ObservableObject {
 	}
 	
 //	MARK:-	FETCH SHOPPERS
-	func	fetch()	{
+	func	fetch(completion:	@escaping	()->()	=	{})	{
 		guard	let url	=	URL(string: ApiURLs.shoppersURL)	else	{
 			self.fetchingStatus	=	.invalidURL
 			return
@@ -60,7 +60,7 @@ class ShoppersViewModel: ObservableObject {
 			DispatchQueue.main.async {
 				self.shoppers	=	decodedShoppers
 			}
+			completion()
 		}.resume()
-		self.fetchingStatus	=	.standby
 	}
 }

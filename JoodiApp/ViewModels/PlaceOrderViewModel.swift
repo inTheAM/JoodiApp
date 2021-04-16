@@ -56,12 +56,15 @@ class PlaceOrderViewModel:	ObservableObject	{
 	private var didChange	=	PassthroughSubject<Void,	SubmitStatus>()
 	
 //	MARK:-	PLACE ORDER
-	func placeOrder()	{
+	func placeOrder(completion:	@escaping	()	->	()	=	{})	{
 		guard	let url	=	URL(string: ApiURLs.ordersURL)	else	{
 			submitStatus	=	.invalidURL
 			return
 		}
-		
+		guard inputsValid	else	{
+			submitStatus	=	.invalidInputs
+			return
+		}
 		
 //		MARK:-	PLACING ORDER WITH VALID ID
 		var orderId	=	0	{
@@ -84,18 +87,22 @@ class PlaceOrderViewModel:	ObservableObject	{
 				URLSession.shared.dataTask(with: request)	{	data,	response,	error	in
 					guard let _	=	response	as?	HTTPURLResponse	else	{
 						self.submitStatus	=	.noResponseFromServer
-						return						
+						return
 					}
 					self.submitStatus	=	.success
+					completion()
+					self.reset()
 				}.resume()
+				
 			}
 		}
 //		MARK:-	GETTING CURRENT NUMBER OF ORDERS TO SET NEW ORDER ID
 		URLSession.shared.dataTask(with: URLRequest(url: url))	{	data,	response,	error	in
 			guard let data	=	data	else	{return}
 			guard let decodedOrders	=	try?	JSONDecoder().decode([Order].self, from: data)	else	{return}
-			orderId = decodedOrders.count + 1
+			orderId	= decodedOrders.count + 1
 		}.resume()
+		
 	}
 	
 //	MARK:-	ADDING NEW ITEM TO ORDER
@@ -111,5 +118,17 @@ class PlaceOrderViewModel:	ObservableObject	{
 	}
 	func resetLocation()	{
 		location	=	nil
+	}
+	
+	func reset()	{
+		name	=	""
+		phoneNumber	=	""
+		timeToDeliver	=	Date()
+		shopper	=	nil
+		location	=		nil
+		locationDescription	=	""
+		newItem	=	Item(name: "",	count: 1)
+		items	=	[Item]()
+		submitStatus	=	.standby
 	}
 }

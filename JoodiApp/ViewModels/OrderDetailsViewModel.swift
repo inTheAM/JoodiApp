@@ -82,7 +82,7 @@ class OrderDetailsViewModel: ObservableObject {
 	}
 	
 //	MARK:-	FETCH ORDER DETAILS; CAN BE USED IN CASE ORDERS LIST IS MISSING DATA REQUIRED FOR DETAIL VIEWS
-	func	fetch(_	id:	Int)	{
+	func	fetch(_	id:	Int,	completion:	@escaping	()->()	=	{})	{
 		guard	let url	=	URL(string: ApiURLs.orderDetailsURL(id: id))	else	{
 			self.fetchingStatus	=	.invalidURL
 			return
@@ -105,8 +105,8 @@ class OrderDetailsViewModel: ObservableObject {
 			DispatchQueue.main.async {
 				self.order	=	decodedOrder
 			}
+			completion()
 		}.resume()
-		self.fetchingStatus	=	.standby
 	}
 	
 	func addReview()	{
