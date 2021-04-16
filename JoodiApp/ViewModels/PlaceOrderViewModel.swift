@@ -68,7 +68,7 @@ class PlaceOrderViewModel:	ObservableObject	{
 			didSet	{
 				submitStatus	=	.sending
 				
-				let	order	=	Order(id: orderId, name: name, phoneNumber: phoneNumber, timeToDeliver: dateString, shopper: shopper?.name, location: location, items: items)
+				let	order	=	Order(id: orderId, name: name, phoneNumber: phoneNumber, timeToDeliver: dateString, shopper: shopper?.name, location: location, locationDescription:	locationDescription.isEmpty	?	nil	:	locationDescription,items: items)
 				print(order)
 				
 				guard let encoded	=	try?	JSONEncoder().encode(order)	else	{

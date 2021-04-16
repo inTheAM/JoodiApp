@@ -18,6 +18,7 @@ struct Order:	Identifiable,	Codable,	Hashable	{
 	var timeToDeliver:	String
 	var shopper:	String?
 	var location:	Location?
+	var locationDescription:	String?
 	var items:	[Item]
 	
 	var review:	Review?
