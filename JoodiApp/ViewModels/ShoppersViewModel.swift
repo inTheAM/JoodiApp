@@ -35,6 +35,7 @@ class ShoppersViewModel: ObservableObject {
 	init()	{
 		shoppers	=	[Shopper]()
 		fetchingStatus	=	.standby
+		fetch()
 	}
 	
 //	MARK:-	FETCH SHOPPERS

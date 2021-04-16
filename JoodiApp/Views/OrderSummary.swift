@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OrderSummary: View {
 	@ObservedObject	var orderDetailsVM:	OrderDetailsViewModel
+	
 	init(order:	Order)	{
 		orderDetailsVM	=	OrderDetailsViewModel(order:	order)
 	}
@@ -23,19 +24,23 @@ struct OrderSummary: View {
 				Text(orderDetailsVM.timeToDeliver)
 					.font(.headline)
 			}.overlay(Divider(), alignment:	.bottom)
-			ForEach(orderDetailsVM.items)	{ item in
-				Text("\(item.count)x \(item.name)")
+			HStack(alignment:	.bottom) {
+				VStack(alignment:	.leading) {
+					ForEach(orderDetailsVM.items)	{ item in
+						Text("\(item.count)x \(item.name)")
+							.font(.caption)
+							.bold()
+					}
+				}
+				Spacer()
+				Text("Delivered by: \(orderDetailsVM.shopper)")
 					.font(.caption)
-					.bold()
+				
 			}
 			
 		}.padding()
 		.foregroundColor(.primary)
-		.background(RoundedRectangle(cornerRadius: 10)
-						.foregroundColor(.init(red: 240/255, green: 240/255, blue: 240/255))
-						.opacity(0.1)
-						.shadow(color:	.black,	radius:	10,x: 0,	y: 0)
-		)
+		.cardify()
     }
 }
 

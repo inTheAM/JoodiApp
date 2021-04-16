@@ -22,31 +22,32 @@ class SubmitReviewViewModel:	ObservableObject	{
 		}
 	}
 	
-	var order:	Order
+//	MARK:-	INPUTS
 	@Published	var rating:	Int
 	@Published	var message:	String
 	
+//	MARK:-	VALIDATING REVIEW
 	var reviewValid:	Bool	{
 		rating	>	0
 	}
-	var isComplete:	Bool	{
-		let formatter	=	DateFormatter()
-		formatter.dateFormat	=	"yyyy-MM-dd HH:mm a"
-		guard let date	=	formatter.date(from: order.timeToDeliver) else { return false }
-		
-		return Date()	>	date
-	}
 	
+//	MARK:-	CHECKING FOR COMPLETE ORDER
+	var isComplete:	Bool
 	
-	
-	
+//	MARK:-	INITIALIZER, ACCEPTS ORDER TO CHECK DELIVERY DATE
 	init(for order:	Order)	{
 		rating	=	0
 		message	=	""
-		self.order	=	order
+		let formatter	=	DateFormatter()
+		formatter.dateFormat	=	"yyyy-MM-dd HH:mm a"
+		guard let date	=	formatter.date(from: order.timeToDeliver) else {
+			isComplete	=	false
+			return
+		}
+		isComplete	=	 Date()	>	date
 	}
 	
-	
+//	MARK:-	SUBMIT REVIEW
 	func submitReview()	{
 		guard let url	=	URL(string: ApiURLs.reviewsURL)	else	{
 			submitStatus	=	.invalidURL
@@ -65,7 +66,7 @@ class SubmitReviewViewModel:	ObservableObject	{
 		request.httpBody	=	encoded
 		
 		URLSession.shared.dataTask(with: request)	{	data,	response,	error	in
-			guard let response	=	response	as?	HTTPURLResponse	else	{
+			guard let _	=	response	as?	HTTPURLResponse	else	{
 				self.submitStatus	=	.noResponseFromServer
 				return
 			}

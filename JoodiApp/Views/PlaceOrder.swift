@@ -6,53 +6,77 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct PlaceOrder: View {
-	@EnvironmentObject	var user:	User
-	@StateObject	var placeOrderViewModel	=	PlaceOrderViewModel()
+	@ObservedObject	var placeOrderViewModel:	PlaceOrderViewModel
+	@Environment(\.presentationMode)	private var presentationMode
 	
-    var body: some View {
-		VStack {
-			
-			ForEach(placeOrderViewModel.items)	{	item in
-				HStack {
-					Text("\(item.count)")
-					Text(item.name)
-				}
-			}.padding()
-			
-			DatePicker("Time to deliver", selection: $placeOrderViewModel.timeToDeliver,	in:	Date()...)
-				.padding()
-			Text("Items")
-				.padding()
-			HStack {
-				TextField("Item name",	text:	$placeOrderViewModel.newItem.name)
-					.padding()
-				Stepper(value: $placeOrderViewModel.newItem.count)	{
-					Text("\(placeOrderViewModel.newItem.count)")
-						.font(.title)
-						.bold()
-				}
-				.frame(width:	150)
+	init(viewModel:	PlaceOrderViewModel)	{
+		placeOrderViewModel	=	viewModel
+	}
+	
+	var body: some View	{
+		
+		VStack(alignment:	.leading)	{
+			Section(header:	Text("Order details:").bold())	{
+				Text("Name: \(placeOrderViewModel.name)")
 			}
-			Button("Add item")	{
-				placeOrderViewModel.addNewItem()
-			}.disabled(placeOrderViewModel.newItemEmpty)
+			Divider()
 			
+			Section(header:	Text("Items in this order: \(placeOrderViewModel.items.count)").bold()) {
+				ForEach(placeOrderViewModel.items)	{	item in
+					HStack {
+						Text("\(item.count)x")
+						Text(item.name)
+					}.navigationTitle("Your order")
+				}
+				
+			}
+			Divider()
 			
+			Section(header:	Text("Delivery details:").bold()) {
+				Text("To be delivered on \(placeOrderViewModel.dateString)")
+				Text("Your shopper: \(placeOrderViewModel.shopper?.name	??	"None selected")")
+				Text("Location:")
+				if placeOrderViewModel.location	!=	nil	{
+				ZStack	{
+					Map(coordinateRegion: .constant(MKCoordinateRegion(center: CLLocationCoordinate2D(location: placeOrderViewModel.location!), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))))
+						.cornerRadius(10)
+						.disabled(true)
+					Circle()
+						.foregroundColor(.blue)
+						.opacity(0.3)
+						.frame(width:	20,	height:	20)
+				}
+				}	else	{
+					Text(placeOrderViewModel.locationDescription)
+				}
+			}
+			Divider()
 			
-			
-			
-			Button("Place order")	{
-				placeOrderViewModel.placeOrder(for:	user)
-			}.disabled(!placeOrderViewModel.inputsValid)
-			.padding()
+			Spacer()
+			HStack	{
+				Spacer()
+				Button("Place order",	action:	placeOrder)
+					.buttonStyle(JoodiButtonStyle(disabled: !placeOrderViewModel.inputsValid))
+				Spacer()
+			}
+		}.padding()
+		
+	}
+	
+	private func placeOrder()	{
+		placeOrderViewModel.placeOrder()
+		if placeOrderViewModel.submitStatus	==	.success	{
+			presentationMode.wrappedValue.dismiss()
 		}
-    }
+	}
 }
+
 
 struct PlaceOrder_Previews: PreviewProvider {
     static var previews: some View {
-        PlaceOrder()
+		PlaceOrder(viewModel:	PlaceOrderViewModel())
     }
 }

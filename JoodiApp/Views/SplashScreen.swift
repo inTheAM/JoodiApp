@@ -15,7 +15,7 @@ struct SplashScreen: View {
 				Color.orange
 					.edgesIgnoringSafeArea(.all)
 					.navigationBarHidden(true)
-				NavigationLink(destination:	WelcomeView(),	isActive:	$showNextView)	{
+				NavigationLink(destination:	OrdersList(),	isActive:	$showNextView)	{
 					ZStack {
 						Text("Joodi")
 							.font(.largeTitle)

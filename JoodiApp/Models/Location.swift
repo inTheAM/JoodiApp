@@ -15,10 +15,22 @@ struct Location:	Codable,	Hashable	{
 	var type:	Int
 	var value:	Coordinate
 	
+	var latitude:	Double	{
+		value.latitude
+	}
+	var longitude:	Double	{
+		value.longitude
+	}
+	
 	struct Coordinate:	Codable,	Hashable {
 		var latitude:	Double
 		var longitude:	Double
+		
+	}
+	init(latitude:	Double,	longitude:	Double) {
+		type	=	1
+		value	=	.init(latitude: latitude, longitude: longitude)
 	}
 	
-	static let	blank	=	Location(type: 9999, value: Coordinate(latitude: 0, longitude: 30))
+	static let	example	=	Location(latitude: 44.3245235, longitude: 39.3463464)
 }

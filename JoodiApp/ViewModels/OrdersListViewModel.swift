@@ -35,6 +35,7 @@ class OrdersListViewModel: ObservableObject {
 	init()	{
 		orders	=	[Order]()
 		fetchingStatus	=	.standby
+		fetch()
 	}
 	
 //	MARK:-	FETCH ORDERS
@@ -63,5 +64,9 @@ class OrdersListViewModel: ObservableObject {
 		}.resume()
 		
 		self.fetchingStatus	=	.standby
+	}
+	
+	deinit {
+		print("Order list destroyed")
 	}
 }

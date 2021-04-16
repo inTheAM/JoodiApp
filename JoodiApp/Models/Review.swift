@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct Review:	Codable {
+struct Review:	Codable,	Hashable {
 	var rating:	Int
 	var message:	String?
+	
 	
 	init(rating:	Int,	message:	String)	{
 		self.rating	=	rating
 		if !message.isEmpty	{
 			self.message	=	message
 		}
-		print(self)
 	}
 }
 

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E28704D126287EB800264C39 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28704D026287EB800264C39 /* ViewExtension.swift */; };
+		E28704DE2629CB2500264C39 /* ItemsInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28704DD2629CB2500264C39 /* ItemsInput.swift */; };
+		E28704E32629CB4800264C39 /* LocationInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28704E22629CB4800264C39 /* LocationInput.swift */; };
+		E28704E82629CCFF00264C39 /* UserDetailsInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28704E72629CCFF00264C39 /* UserDetailsInput.swift */; };
+		E28704ED2629CD7A00264C39 /* TimeToDeliverInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28704EC2629CD7A00264C39 /* TimeToDeliverInput.swift */; };
+		E28704FE2629E39300264C39 /* JoodiButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28704FD2629E39300264C39 /* JoodiButtonStyle.swift */; };
+		E28705062629E3C200264C39 /* MapKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28705052629E3C200264C39 /* MapKitExtensions.swift */; };
+		E28705132629F7E200264C39 /* CustomizeOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28705122629F7E200264C39 /* CustomizeOrder.swift */; };
 		E288582A26220DD000BD756F /* JoodiAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288582926220DD000BD756F /* JoodiAppApp.swift */; };
 		E288582C26220DD000BD756F /* ShoppersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288582B26220DD000BD756F /* ShoppersList.swift */; };
 		E288582E26220DD100BD756F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E288582D26220DD100BD756F /* Assets.xcassets */; };
@@ -26,10 +34,7 @@
 		E28858CD26222C6100BD756F /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28858CC26222C6100BD756F /* OrderDetails.swift */; };
 		E28858D22622322E00BD756F /* PlaceOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28858D12622322E00BD756F /* PlaceOrderViewModel.swift */; };
 		E28858DD2622368800BD756F /* PlaceOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28858DC2622368800BD756F /* PlaceOrder.swift */; };
-		E288EDD3262251D000C3B5C0 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288EDD2262251D000C3B5C0 /* WelcomeView.swift */; };
-		E288EDD82622520900C3B5C0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288EDD72622520900C3B5C0 /* User.swift */; };
 		E288EDE02622531900C3B5C0 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288EDDF2622531900C3B5C0 /* SplashScreen.swift */; };
-		E288EDED2622554900C3B5C0 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288EDEC2622554900C3B5C0 /* WelcomeViewModel.swift */; };
 		E288EE1D262284D100C3B5C0 /* OrderSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288EE1C262284D100C3B5C0 /* OrderSummary.swift */; };
 		E2976C7326259A2300764386 /* SubmitStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976C7226259A2300764386 /* SubmitStatus.swift */; };
 		E2976C7826259ED400764386 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976C7726259ED400764386 /* Review.swift */; };
@@ -55,6 +60,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E28704D026287EB800264C39 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		E28704DD2629CB2500264C39 /* ItemsInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsInput.swift; sourceTree = "<group>"; };
+		E28704E22629CB4800264C39 /* LocationInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInput.swift; sourceTree = "<group>"; };
+		E28704E72629CCFF00264C39 /* UserDetailsInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsInput.swift; sourceTree = "<group>"; };
+		E28704EC2629CD7A00264C39 /* TimeToDeliverInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeToDeliverInput.swift; sourceTree = "<group>"; };
+		E28704FD2629E39300264C39 /* JoodiButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoodiButtonStyle.swift; sourceTree = "<group>"; };
+		E28705052629E3C200264C39 /* MapKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitExtensions.swift; sourceTree = "<group>"; };
+		E28705122629F7E200264C39 /* CustomizeOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeOrder.swift; sourceTree = "<group>"; };
 		E288582626220DD000BD756F /* JoodiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoodiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E288582926220DD000BD756F /* JoodiAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoodiAppApp.swift; sourceTree = "<group>"; };
 		E288582B26220DD000BD756F /* ShoppersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppersList.swift; sourceTree = "<group>"; };
@@ -80,10 +93,7 @@
 		E28858CC26222C6100BD756F /* OrderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
 		E28858D12622322E00BD756F /* PlaceOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOrderViewModel.swift; sourceTree = "<group>"; };
 		E28858DC2622368800BD756F /* PlaceOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOrder.swift; sourceTree = "<group>"; };
-		E288EDD2262251D000C3B5C0 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		E288EDD72622520900C3B5C0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E288EDDF2622531900C3B5C0 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
-		E288EDEC2622554900C3B5C0 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		E288EE1C262284D100C3B5C0 /* OrderSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSummary.swift; sourceTree = "<group>"; };
 		E2976C7226259A2300764386 /* SubmitStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitStatus.swift; sourceTree = "<group>"; };
 		E2976C7726259ED400764386 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -116,6 +126,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E287050A2629E3D400264C39 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E28704D026287EB800264C39 /* ViewExtension.swift */,
+				E28705052629E3C200264C39 /* MapKitExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E287050B2629E3E300264C39 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				E28704FD2629E39300264C39 /* JoodiButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		E288581D26220DD000BD756F = {
 			isa = PBXGroup;
 			children = (
@@ -139,8 +166,9 @@
 		E288582826220DD000BD756F /* JoodiApp */ = {
 			isa = PBXGroup;
 			children = (
-				E28858A526221E1B00BD756F /* ApiURLs.swift */,
 				E288582926220DD000BD756F /* JoodiAppApp.swift */,
+				E287050A2629E3D400264C39 /* Extensions */,
+				E287050B2629E3E300264C39 /* Styles */,
 				E288585726220F3E00BD756F /* Views */,
 				E288585926220F4800BD756F /* ViewModels */,
 				E288585826220F4200BD756F /* Models */,
@@ -181,13 +209,17 @@
 			isa = PBXGroup;
 			children = (
 				E288EDDF2622531900C3B5C0 /* SplashScreen.swift */,
-				E288EDD2262251D000C3B5C0 /* WelcomeView.swift */,
 				E28858BF262226D100BD756F /* OrdersList.swift */,
 				E288EE1C262284D100C3B5C0 /* OrderSummary.swift */,
 				E28858CC26222C6100BD756F /* OrderDetails.swift */,
-				E288582B26220DD000BD756F /* ShoppersList.swift */,
-				E28858DC2622368800BD756F /* PlaceOrder.swift */,
 				E2976C812625A25100764386 /* SubmitReview.swift */,
+				E28704E72629CCFF00264C39 /* UserDetailsInput.swift */,
+				E28704DD2629CB2500264C39 /* ItemsInput.swift */,
+				E28704E22629CB4800264C39 /* LocationInput.swift */,
+				E28704EC2629CD7A00264C39 /* TimeToDeliverInput.swift */,
+				E288582B26220DD000BD756F /* ShoppersList.swift */,
+				E28705122629F7E200264C39 /* CustomizeOrder.swift */,
+				E28858DC2622368800BD756F /* PlaceOrder.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,6 +227,7 @@
 		E288585826220F4200BD756F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E28858A526221E1B00BD756F /* ApiURLs.swift */,
 				E288585A26220F7400BD756F /* Shopper.swift */,
 				E28858672622106900BD756F /* Item.swift */,
 				E288586C262210DE00BD756F /* Order.swift */,
@@ -209,13 +242,11 @@
 		E288585926220F4800BD756F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				E288EDEC2622554900C3B5C0 /* WelcomeViewModel.swift */,
 				E28858AD26221E6A00BD756F /* ShoppersViewModel.swift */,
 				E28858B7262223F900BD756F /* OrdersListViewModel.swift */,
 				E28858C4262229E300BD756F /* OrderDetailsViewModel.swift */,
 				E28858D12622322E00BD756F /* PlaceOrderViewModel.swift */,
 				E2976C7C2625A09200764386 /* SubmitReviewViewModel.swift */,
-				E288EDD72622520900C3B5C0 /* User.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -349,29 +380,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E28704FE2629E39300264C39 /* JoodiButtonStyle.swift in Sources */,
 				E288EDE02622531900C3B5C0 /* SplashScreen.swift in Sources */,
-				E288EDED2622554900C3B5C0 /* WelcomeViewModel.swift in Sources */,
+				E28704ED2629CD7A00264C39 /* TimeToDeliverInput.swift in Sources */,
 				E28858C0262226D100BD756F /* OrdersList.swift in Sources */,
 				E28858682622106900BD756F /* Item.swift in Sources */,
 				E28858B326221E7700BD756F /* FetchingStatus.swift in Sources */,
-				E288EDD3262251D000C3B5C0 /* WelcomeView.swift in Sources */,
 				E288EE1D262284D100C3B5C0 /* OrderSummary.swift in Sources */,
 				E288582C26220DD000BD756F /* ShoppersList.swift in Sources */,
 				E2976C7326259A2300764386 /* SubmitStatus.swift in Sources */,
 				E28858DD2622368800BD756F /* PlaceOrder.swift in Sources */,
 				E2976C7D2625A09200764386 /* SubmitReviewViewModel.swift in Sources */,
 				E28858AE26221E6A00BD756F /* ShoppersViewModel.swift in Sources */,
-				E288EDD82622520900C3B5C0 /* User.swift in Sources */,
 				E28858A626221E1B00BD756F /* ApiURLs.swift in Sources */,
 				E28858D22622322E00BD756F /* PlaceOrderViewModel.swift in Sources */,
 				E288586D262210DE00BD756F /* Order.swift in Sources */,
+				E28705062629E3C200264C39 /* MapKitExtensions.swift in Sources */,
 				E288582A26220DD000BD756F /* JoodiAppApp.swift in Sources */,
 				E28858CD26222C6100BD756F /* OrderDetails.swift in Sources */,
 				E2976C7826259ED400764386 /* Review.swift in Sources */,
 				E2976C822625A25100764386 /* SubmitReview.swift in Sources */,
+				E28704D126287EB800264C39 /* ViewExtension.swift in Sources */,
 				E28858C5262229E300BD756F /* OrderDetailsViewModel.swift in Sources */,
 				E28858722622143200BD756F /* Location.swift in Sources */,
+				E28704E32629CB4800264C39 /* LocationInput.swift in Sources */,
+				E28704DE2629CB2500264C39 /* ItemsInput.swift in Sources */,
+				E28705132629F7E200264C39 /* CustomizeOrder.swift in Sources */,
 				E288585B26220F7400BD756F /* Shopper.swift in Sources */,
+				E28704E82629CCFF00264C39 /* UserDetailsInput.swift in Sources */,
 				E28858B8262223F900BD756F /* OrdersListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

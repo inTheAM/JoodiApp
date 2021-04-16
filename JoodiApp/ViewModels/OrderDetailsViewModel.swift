@@ -30,7 +30,7 @@ class OrderDetailsViewModel: ObservableObject {
 		}
 	}
 	
-//	MARK:-	INITIALIZER
+//	MARK:-	INITIALIZERS
 	init()	{
 		order	=	.blank
 		fetchingStatus	=	.standby
@@ -59,10 +59,14 @@ class OrderDetailsViewModel: ObservableObject {
 		
 		return formatter.string(from: date)
 	}
-	var shopper:	String	{
-		order.shopper
+	var review:	Review?	{
+		order.review
 	}
-	var	location:	Location	{
+//	MARK:-	IF SHOPPER IS NOT SELECTED, SERVER CAN ALLOCATE RANDOM SHOPPER. THIS INSTANCE MAY ALWAYS HAVE A VALUE FROM THE SERVER.
+	var shopper:	String	{
+		order.shopper	??	"You did not select a shopper"
+	}
+	var	location:	Location?	{
 		order.location
 	}
 	var items:	[Item]	{
@@ -77,7 +81,7 @@ class OrderDetailsViewModel: ObservableObject {
 		return Date()	>	date
 	}
 	
-//	MARK:-	FETCH ORDER DETAILS
+//	MARK:-	FETCH ORDER DETAILS; CAN BE USED IN CASE ORDERS LIST IS MISSING DATA REQUIRED FOR DETAIL VIEWS
 	func	fetch(_	id:	Int)	{
 		guard	let url	=	URL(string: ApiURLs.orderDetailsURL(id: id))	else	{
 			self.fetchingStatus	=	.invalidURL
@@ -103,5 +107,9 @@ class OrderDetailsViewModel: ObservableObject {
 			}
 		}.resume()
 		self.fetchingStatus	=	.standby
+	}
+	
+	func addReview()	{
+		
 	}
 }

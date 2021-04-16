@@ -16,9 +16,11 @@ struct Order:	Identifiable,	Codable,	Hashable	{
 	var name:	String
 	var phoneNumber:	String
 	var timeToDeliver:	String
-	var shopper:	String
-	var location:	Location
+	var shopper:	String?
+	var location:	Location?
 	var items:	[Item]
 	
-	static let blank	=	Order(id: 0, name: "", phoneNumber: "", timeToDeliver: "", shopper: "", location: .blank, items: [Item]())
+	var review:	Review?
+	
+	static let blank	=	Order(id: 0, name: "", phoneNumber: "", timeToDeliver: "", shopper: "", location: .example, items: [Item]())
 }
