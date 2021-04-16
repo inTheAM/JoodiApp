@@ -20,7 +20,7 @@ class WelcomeViewModel:	ObservableObject	{
 	}
 	
 	func skip()	->	User	{
-		User(name:	"Ali",	phoneNumber: "0000000000")
+		User.example
 	}
 	
 }
