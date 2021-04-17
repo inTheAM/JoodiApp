@@ -89,9 +89,12 @@ class PlaceOrderViewModel:	ObservableObject	{
 						self.submitStatus	=	.noResponseFromServer
 						return
 					}
-					self.submitStatus	=	.success
-					completion()
-					self.reset()
+					DispatchQueue.main.async {
+						self.submitStatus	=	.success
+						completion()
+						self.reset()
+					}
+					
 				}.resume()
 				
 			}
